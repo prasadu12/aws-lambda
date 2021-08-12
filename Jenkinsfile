@@ -13,11 +13,17 @@ pipeline {
 		//sh 'java  HelloWorld'
 		 sh 'mvn -B -DskipTests clean package'
 		 sh 'pwd'
-		 sh 'java -jar target/*jar '
+		 //sh 'java -jar target/*jar '
                 //git "https://github.com/VnyKumar/firstGit.git"
                 
             }//steps
         }//stage
+	    
+	    stage('upload to s3'){
+		    steps {
+		    sh 'in s3 upload'
+		    }
+	    }
         
     }//stages
 	
