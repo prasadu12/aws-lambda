@@ -22,7 +22,11 @@ pipeline {
 	    stage('upload to s3'){
 		    steps {
 		    sh 'echo in s3 upload'
-		    sh 'aws s3 ls'
+		    //sh 'aws s3 ls'
+		    withAWS(credentials:'AWS-S3-Lambda') {
+				sh "aws s3 ls s3://aws22bucket/ --recursive"
+                                    
+			    }
 		    }
 	    }
         
