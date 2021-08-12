@@ -13,7 +13,7 @@ public class LambdaJavaAPI implements RequestHandler<Object, GatewayResponse> {
 
         String message = "Hello from AWS LAMBDA DEMO...";
         Date current_Date = new Date();
-        message= message +" Executed at  .."+ current_Date.toString();
+        message= message +" /n Executed at  .."+ current_Date.toString();
         System.out.println(message);
 
         GatewayResponse response = new GatewayResponse(
