@@ -10,7 +10,7 @@ public class LambdaJavaAPI implements RequestHandler<Object, GatewayResponse> {
     @Override
     public GatewayResponse handleRequest(Object object, Context context) {
 
-        String message = "Hello from TechPrimers";
+        String message = "Hello from TechPrimers...";
         System.out.println(message);
 
         GatewayResponse response = new GatewayResponse(
