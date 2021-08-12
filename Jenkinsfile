@@ -21,7 +21,8 @@ pipeline {
 	    
 	    stage('upload to s3'){
 		    steps {
-		    sh 'in s3 upload'
+		    sh 'echo in s3 upload'
+		    sh 'aws s3 ls'
 		    }
 	    }
         
