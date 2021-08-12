@@ -11,6 +11,7 @@ public class LambdaJavaAPI implements RequestHandler<Object, GatewayResponse> {
     public GatewayResponse handleRequest(Object object, Context context) {
 
         String message = "Hello from AWS LAMBDA DEMO...";
+        message= message + System.currentTimeMillis.toString();
         System.out.println(message);
 
         GatewayResponse response = new GatewayResponse(
