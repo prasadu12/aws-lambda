@@ -11,7 +11,7 @@ public class LambdaJavaAPI implements RequestHandler<Object, GatewayResponse> {
     @Override
     public GatewayResponse handleRequest(Object object, Context context) {
 
-        String message = "Hello from AWS LAMBDA DEMO...";
+        String message = "Hello from AWS LAMBDA DEMO......";
         Date current_Date = new Date();
         message= message +"  Executed at  .."+ current_Date.toString() + "added new text here";
         System.out.println(message);
