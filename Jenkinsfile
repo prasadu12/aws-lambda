@@ -14,9 +14,9 @@ pipeline {
          
             }//steps
         }//stage
-     
-     stage('deploy to lambda'){
-      steps {
+     stages {
+         stage('deploy to lambda'){
+             steps {
        
     //sh 'Uploading to S3....'
          withAWS(credentials:'AWS-S3-Lambda') {
