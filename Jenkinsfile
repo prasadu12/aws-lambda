@@ -15,7 +15,7 @@ pipeline {
             }//steps
         }//stage
      stages {
-         stage('deploy to lambda'){
+         stage('deploy to lambda') {
              steps {
        
     //sh 'Uploading to S3....'
