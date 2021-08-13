@@ -23,17 +23,11 @@ pipeline {
       
                 sh 'aws lambda update-function-code  --function-name  demofunction3   --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar'
 
-             }
-          
-                                    
+           }                               
        }
-      }
-     
-        
+   }
+         
     }//stages
- 
-
-     
  
 }//pipeline
 
