@@ -32,22 +32,8 @@ pipeline {
         
     }//stages
  
- post {
-        always {
-            echo 'clearing workspace'
-            deleteDir() /* clean up our workspace */
-        }
-        success {
-            echo 'Job succeeded . uploading object to S3'
-   
-   
-   
-        }
-        
-        failure {
-            echo 'Job failed '
-        }
-      }
+
+     
  
 }//pipeline
 
