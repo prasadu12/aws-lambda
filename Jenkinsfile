@@ -14,7 +14,7 @@ pipeline {
          
             }//steps
         }//stage
-     stages {
+     
          stage('deploy to lambda') {
              steps {
        
