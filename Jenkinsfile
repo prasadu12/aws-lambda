@@ -9,7 +9,7 @@ pipeline {
             steps {
                sh 'echo "Hello World"' 
        sh 'mvn -B -DskipTests clean package'
-     sh 'cp target/*jar ../${BUILD_NUMBER}_LambdaAPI.jar'
+     //sh 'cp target/*jar ../${BUILD_NUMBER}_LambdaAPI.jar'
      
          
             }//steps
