@@ -19,7 +19,7 @@ pipeline {
              steps {
        
     //sh 'Uploading to S3....'
-         withAWS(credentials:'Elaprolu Prasadu') {
+         withAWS(credentials:'aws-credentials') {
       
                 sh 'aws lambda update-function-code  --function-name  demofunction3   --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar'
 
