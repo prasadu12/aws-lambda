@@ -18,7 +18,7 @@ pipeline {
          stage('deploy to lambda') {
              steps {
        
-    //sh 'Uploading to S3....'
+    //sh 'Uploading to aws....'
          withAWS(credentials:'aws-credentials') {
       
                 sh 'aws lambda update-function-code  --function-name  demofunction3   --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar'
