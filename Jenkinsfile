@@ -33,13 +33,13 @@ pipeline {
 					steps {
 							echo " The environment is ${params.Env}"
 							 script {
-								  env.USERNAME = input message: 'Please enter the username',parameters: [string(defaultValue: '', description: '',name: 'Username')]
+								  env.FUNC_NAME = input message: 'Please enter the Function Name(Without Spaces) to be created.!',parameters: [string(defaultValue: '', description: '',name: 'FunctionName')]
 									}
-							       echo "$env.USERNAME"						
+							       echo "$env.FUNC_NAME"						
 					
 							withAWS(region:'us-west-2',credentials:'AWSLoginCred'){
-							// sh "aws lambda create-function --function-name "demo-function" --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --handler "com.techprimers.aws.LambdaJavaAPI" --runtime java8 --role arn:aws:iam::125855726099:role/lambda-example"
 							sh "aws lambda create-function --function-name $env.FUNC_NAME --runtime java8  --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --handler $env.HANDLER  --role $env.ARN"
+							//sh "aws lambda create-function --function-name $env.FUNC_NAME --runtime java8  --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --handler $env.HANDLER  --role $env.ARN"
 							//API Gateway has to create Manually- As cli Integration not working
 							//sh "aws lambda create-function --function-name demofunction2  --runtime java8  --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --role arn:aws:iam::125855726099:role/lambda-example --handler com.techprimers.aws.LambdaJavaAPI"
 							}
