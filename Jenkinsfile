@@ -16,8 +16,6 @@ pipeline {
       description: 'Passing the Environment'
 	  )
 	  
-     string(
-      name: 'lambda')
 	  
     }
 	
