@@ -32,6 +32,11 @@ pipeline {
 						when { expression { params.Env == "BRANCH" } }
 					steps {
 							echo " The environment is ${params.Env}"
+							 script {
+								  env.USERNAME = input message: 'Please enter the username',parameters: [string(defaultValue: '', description: '',name: 'Username')]
+									}
+							       echo "$env.USERNAME"						
+					
 							withAWS(region:'us-west-2',credentials:'AWSLoginCred'){
 							// sh "aws lambda create-function --function-name "demo-function" --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --handler "com.techprimers.aws.LambdaJavaAPI" --runtime java8 --role arn:aws:iam::125855726099:role/lambda-example"
 							sh "aws lambda create-function --function-name $env.FUNC_NAME --runtime java8  --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --handler $env.HANDLER  --role $env.ARN"
