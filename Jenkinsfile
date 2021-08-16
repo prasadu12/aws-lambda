@@ -18,9 +18,7 @@ pipeline {
     )
    
   }
-     triggers {
-        pollSCM "* * * * *"
-    }
+     
 	
 	
     stages {
