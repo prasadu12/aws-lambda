@@ -17,9 +17,6 @@ pipeline {
       description: 'Passing the Environment'
     )
    
-  }
-     triggers {
-        pollSCM "* * * * *"
     }
 	
 	
