@@ -33,9 +33,9 @@ pipeline {
 					steps {
 							echo " The environment is ${params.Env}"
 							 script {
-								  env.FUNCT_NAME = input message: 'Please enter the Function Name(Without Spaces) to be created.!',parameters: [string(defaultValue: '', description: '',name: 'FunctionName')]
+								  params.FUNCT_NAME = input message: 'Please enter the Function Name(Without Spaces) to be created.!',parameters: [string(defaultValue: '', description: '',name: 'FunctionName')]
 									}
-							       echo "$env.FUNCT_NAME"						
+							       echo "$params.FUNCT_NAME"						
 					
 							withAWS(region:'us-west-2',credentials:'AWSLoginCred'){
 							sh "aws lambda create-function --function-name $env.FUNCT_NAME --runtime java8  --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar --handler $env.HANDLER  --role $env.ARN"
