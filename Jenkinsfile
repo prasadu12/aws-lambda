@@ -16,11 +16,11 @@ pipeline {
       choices: ['BRANCH', 'RELEASE'],
       description: 'Passing the Environment'
     ),
-    string(
+     string(
       name: 'lambda')
    
     
-   }
+    }
 	def FUNC_NAME = "{params.lambda}"
 	
 	
@@ -56,4 +56,5 @@ pipeline {
 	    
         }//stages
 }//pipeline
+
 
