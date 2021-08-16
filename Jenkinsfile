@@ -19,7 +19,7 @@ pipeline {
      string(
       name: 'lambda')
    
-	def FUNC_NAME = {"params.lambda"}
+	def FUNC_NAME = "{params.lambda}"
 	}
 	
 	
