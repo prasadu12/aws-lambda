@@ -15,7 +15,7 @@ pipeline {
       name: 'Env',
       choices: ['BRANCH', 'RELEASE'],
       description: 'Passing the Environment'
-    ),
+     ),
      string(
       name: 'lambda')
    
