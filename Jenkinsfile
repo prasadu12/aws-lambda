@@ -10,8 +10,8 @@ pipeline {
 	 ARN  = 'arn:aws:iam::125855726099:role/lambda-example'
 	  
     }
-	parameters {
-    choice(
+    parameters {
+     choice(
       name: 'Env',
       choices: ['BRANCH', 'RELEASE'],
       description: 'Passing the Environment'
@@ -19,8 +19,8 @@ pipeline {
     string(
       name: 'lambda')
    
-   
-  }
+    
+   }
 	def FUNC_NAME = "{params.lambda}"
 	
 	
