@@ -20,7 +20,7 @@ pipeline {
       name: 'lambda')
    
     }
-	def FUNC_NAME = "{params.lambda}"
+	def FUNC_NAME = {"params.lambda"}
 	
 	
     stages {
