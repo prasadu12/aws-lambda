@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        
+        FUNC_NAME   = 'demo-function'
 	TEST_FUNC   =  'temp'
 	 HANDLER = 'com.techprimers.aws.LambdaJavaAPI'
 	 ARN  = 'arn:aws:iam::125855726099:role/lambda-example'
