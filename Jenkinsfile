@@ -53,7 +53,7 @@ pipeline {
 						         sh 'aws lambda list-functions'
 							 sh "aws lambda update-function-code  --function-name $env.FUNC_NAME   --zip-file fileb://target/lambda-java-api-example-1.0-SNAPSHOT.jar "
 							 }
-						}  					    aws list
+						}  					    
 		    }	
 	    
         }//stages
